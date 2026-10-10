@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Live Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="logo">
+                    <span class="logo-icon">📊</span>
+                    Crypto<span class="accent">Live</span>
+                </h1>
+                <p class="subtitle">Real-Time Cryptocurrency Dashboard</p>
+            </div>
+            <div class="header-right">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span id="status-text">Live</span>
+                </div>
+                <div class="last-update">
+                    Last update: <span id="last-update">--:--:--</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Market Overview Cards -->
+        <section class="market-overview">
+            <div class="overview-card">
+                <div class="card-label">Total Market Cap</div>
+                <div class="card-value" id="total-market-cap">$--</div>
+                <div class="card-change" id="total-market-change">--</div>
+            </div>
+            <div class="overview-card">
+                <div class="card-label">24h Volume</div>
+                <div class="card-value" id="total-volume">$--</div>
+                <div class="card-change" id="total-volume-change">--</div>
+            </div>
+            <div class="overview-card">
+                <div class="card-label">BTC Dominance</div>
+                <div class="card-value" id="btc-dominance">--%</div>
+                <div class="card-change" id="btc-dominance-change">--</div>
+            </div>
+            <div class="overview-card">
+                <div class="card-label">Fear & Greed Index</div>
+                <div class="card-value" id="fear-greed">--</div>
+                <div class="card-change" id="fear-greed-label">--</div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Price Table -->
+            <section class="price-table-section">
+                <div class="section-header">
+                    <h2>🔥 Top Cryptocurrencies</h2>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search coins...">
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Coin</th>
+                                <th>Price</th>
+                                <th>24h %</th>
+                                <th>Market Cap</th>
+                                <th>Volume (24h)</th>
+                                <th>Chart</th>
+                            </tr>
+                        </thead>
+                        <tbody id="price-table-body">
+                            <tr class="loading-row">
+                                <td colspan="7">
+                                    <div class="loading-spinner">
+                                        <div class="spinner"></div>
+                                        <p>Loading data...</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Side Panel -->
+            <aside class="side-panel">
+                <!-- Selected Coin Detail -->
+                <div class="coin-detail-card">
+                    <h3>📈 Coin Detail</h3>
+                    <div id="coin-detail" class="coin-detail-content">
+                        <p class="placeholder-text">Click a coin to see details</p>
+                    </div>
+                </div>
+
+                <!-- Top Gainers -->
+                <div class="gainers-card">
+                    <h3>🚀 Top Gainers (24h)</h3>
+                    <div id="top-gainers" class="gainers-list">
+                        <p class="placeholder-text">Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Top Losers -->
+                <div class="losers-card">
+                    <h3>📉 Top Losers (24h)</h3>
+                    <div id="top-losers" class="losers-list">
+                        <p class="placeholder-text">Loading...</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Data provided by <a href="https://www.binance.com" target="_blank">Binance API</a> | Auto-refreshes every 10 seconds</p>
+            <p class="footer-right">⚡ Powered by Vercel</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
